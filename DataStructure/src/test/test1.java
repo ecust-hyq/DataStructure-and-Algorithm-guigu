@@ -12,11 +12,3 @@ public class test1 {
     }
 }
 
-class arr {
-    int size;
-    arr(){
-    }
-    void setSize(){
-        size = 7;
-    }
-}
