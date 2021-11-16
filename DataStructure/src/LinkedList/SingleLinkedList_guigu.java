@@ -63,4 +63,20 @@ public class SingleLinkedList_guigu<T> {
             System.out.println("ID: " + n.id + "\tname: " + n.data);
         }
     }
+
+    //腾讯面试题:单链表的反转
+    public void reversal(){
+        Node left = head.next;
+        Node temp;
+        Node right;
+        if(head.next != null && head.next.next != null){
+            temp = left.next;
+            while (temp != null){
+                right = temp.next;
+                temp.next = left;
+
+            }
+        }
+
+    }
 }
