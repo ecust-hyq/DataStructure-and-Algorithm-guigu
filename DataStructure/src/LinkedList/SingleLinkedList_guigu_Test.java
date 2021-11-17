@@ -25,5 +25,18 @@ public class SingleLinkedList_guigu_Test {
         myList2.addById(6, "Linda");
         myList2.addById(6, "Linda");
         myList2.showList();
+
+        myList2.reversal();
+        myList2.showList();
+
+        System.out.println("************************");
+
+        SingleLinkedList_guigu<String> myList3 = new SingleLinkedList_guigu<>();
+        myList3.addById(1, "Tom");
+        myList3.addById(2, "Jack");
+        myList3.reversal();
+        myList3.showList();
+
     }
+
 }

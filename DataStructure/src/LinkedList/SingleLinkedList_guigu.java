@@ -28,6 +28,7 @@ public class SingleLinkedList_guigu<T> {
     }
 
     public void add(int id, T data){
+        sum++;
         Node last = head;
         while (last.next != null){
             last = last.next;
@@ -37,6 +38,7 @@ public class SingleLinkedList_guigu<T> {
 
     //根据Id从小大到大的顺序添加至链表，如果ID已存在则提示添加失败
     public void addById(int id, T data){
+        sum++;
         Node insert = head;
         while (true){
             if(insert.next!=null && id < insert.next.id){
@@ -58,25 +60,42 @@ public class SingleLinkedList_guigu<T> {
     public void showList(){
         System.out.println("当前列表：");
         Node n = head;
-        while (n.next != null){
-            n = n.next;
-            System.out.println("ID: " + n.id + "\tname: " + n.data);
-        }
-    }
-
-    //腾讯面试题:单链表的反转
-    public void reversal(){
-        Node left = head.next;
-        Node temp;
-        Node right;
-        if(head.next != null && head.next.next != null){
-            temp = left.next;
-            while (temp != null){
-                right = temp.next;
-                temp.next = left;
-
+        if(head.next == null){
+            System.out.println("当前列表为空");
+        }else {
+            while (n.next != null){
+                n = n.next;
+                System.out.println("ID: " + n.id + "\tname: " + n.data);
             }
         }
 
     }
+
+    public Node getHead(){
+        return head;
+    }
+
+    //腾讯面试题:单链表的反转
+    public void reversal(){
+        Node last = head;
+        Node temp;
+        Node h = head;
+        Node t;
+        if(head.next != null && head.next.next!= null){
+            for (int i = 0; i < sum-1; i++) {
+                last = head;
+
+                while (last.next.next != null){
+                    last = last.next;
+                }
+                temp = last.next;
+                last.next = null;
+                t = h.next;
+                h.next = temp;
+                temp.next = t;
+                h = temp;
+            }
+        }
+    }
+
 }
